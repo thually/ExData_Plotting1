@@ -7,9 +7,11 @@ data <- data %>% mutate(Date_time = paste(Date, Time))
 data <- data %>% mutate(Date_time = dmy_hms(Date_time))
 
 png("plot3.png")
+
 with(data, {plot(Date_time, Sub_metering_1, type = "l",
                 ylab = "Energy sub metering",
-                xlab = "")
+                xlab = "", xaxt="n")
+    axis(1, at = c(data$Date_time[1],data$Date_time[1441], data$Date_time[2880]), labels=c("Thu", "Fri", "Sat"))
     points(Date_time, Sub_metering_2, type = "l", col = "red")
     points(Date_time, Sub_metering_3, type = "l", col = "blue")
     legend("topright", lty = "solid", col = c("black", "red", "blue"),
