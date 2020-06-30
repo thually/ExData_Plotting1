@@ -7,7 +7,7 @@ data <- data %>% mutate(Date_time = paste(Date, Time))
 data <- data %>% mutate(Date_time = dmy_hms(Date_time))
 
 with(data, hist(Global_active_power, main = "Global Active Power",
-                xlab = "Global Active Power", col = "#ff2600"))
+                xlab = "Global Active Power (killowatts)", col = "#ff2600"))
 
 dev.copy(png, filename = "plot1.png")
 dev.off()
