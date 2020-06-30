@@ -8,7 +8,8 @@ data <- data %>% mutate(Date_time = dmy_hms(Date_time))
 
 with(data, plot(Date_time, Global_active_power, type = "l",
                 ylab = "Global Active Power (kilowatts)",
-                xlab = ""))
+                xlab = "", xaxt="n"))
+axis(1, at = c(data$Date_time[1],data$Date_time[1441], data$Date_time[2880]), labels=c("Thu", "Fri", "Sat"))
 
 dev.copy(png, filename = "plot2.png")
 dev.off()
