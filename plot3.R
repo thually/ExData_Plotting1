@@ -12,7 +12,8 @@ with(data, {plot(Date_time, Sub_metering_1, type = "l",
     points(Date_time, Sub_metering_2, type = "l", col = "red")
     points(Date_time, Sub_metering_3, type = "l", col = "blue")
     legend("topright", lty = "solid", col = c("black", "red", "blue"),
-           legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+           legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+           cex = 0.75, text.width = 40000)
     })
 
 dev.copy(png, filename = "plot3.png")
